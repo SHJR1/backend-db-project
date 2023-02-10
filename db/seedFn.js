@@ -3,8 +3,8 @@ const {Team} = require('./');
 const {teams} = require('./seedData');
 
 const seed = async () => {
-  await sequelize.sync({ force: false }); // recreate db
-  await Kitten.bulkCreate(teams);
+  await sequelize.sync({ force: true }); // recreate db
+  await Team.bulkCreate(teams);
 };
 
 module.exports = seed;
